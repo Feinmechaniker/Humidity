@@ -1,0 +1,21 @@
+on sw_on do
+  gpio,14,1
+  TaskValueSet,Fan,State,1
+endon
+
+on sw_off do
+  gpio,14,0
+  TaskValueSet,Fan,State,0
+endon  
+
+on valuedown do
+  if [SW#Temp]>0
+    TaskValueSet,SW,Temp,[SW#Temp]-0.5
+  endif
+endon
+
+on valueup do
+  if [SW#Temp]<50
+    TaskValueSet,SW,Temp,[SW#Temp]+0.5
+  endif
+Endon

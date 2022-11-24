@@ -1,0 +1,113 @@
+<head>
+<meta name="Humidity Controller" content="width=width=device-width, initial-scale=1">   
+</head>
+
+<!--  
+<head>
+<meta http-equiv="refresh" content="5">
+</head>
+-->
+
+<STYLE>
+ * {font-family:sans-serif; font-size:16pt;}
+ .button{
+    margin:4px; 
+    padding:4px 16px; 
+    background-color:#07D; 
+    color:#FFF; 
+    text-decoration:none; 
+    border-radius:4px
+    }
+
+ .container{
+    height: 600px;
+    width: 500px;
+    border: 1px solid black;
+    margin-top: 30px;
+    }
+</STYLE>
+
+<HTML> 
+<center>
+
+<body>
+ <div class="container">
+ <body style="background-color:#f4f4f4;">
+ <center>  
+
+ <table border="0">  
+     <tr>
+      <td align=center></td>
+      <th align=center>Humidity Controller</th>    
+      <td align=center></td>
+    </tr>   
+     <tr>
+      <td>&nbsp;</td> 
+    </tr>   
+    <tr>
+      <td align=center>Fan</td>
+      <td align=center><img src= "fan[Fan#State].png" width="80" height="80"/></td>    
+      <td align=center>State</td>
+    </tr>    
+    <tr>
+      <td>&nbsp;</td> 
+    </tr>
+    <tr>
+      <td align=center><a class='button link' href="humcontrol.esp?cmd=event,sw_on">On</a></td>     
+      <td align=center><a class='button link' href="humcontrol.esp?cmd=event,sw_auto">Auto</a></td>
+      <td align=center><a class='button link' href="humcontrol.esp?cmd=event,sw_off">Off</a></td>
+    </tr>    
+ </table>  
+ <br>       
+  
+  <table border="0">       
+     <tr> 
+       <td align=center>min. Temp:</td>     
+       <td align=center>[SW#Temp] &#8451</td>   
+       <td align=center><a class='button link' href="humcontrol.esp?cmd=event,valueup">Up</a></td>     
+       <td align=center><a class='button link' href="humcontrol.esp?cmd=event,valuedown">Down</a></td>                   
+     </tr>   
+  </table>
+ <br>
+
+ <form action="">
+   <button type="submit">Refresh</button></a> 
+ </form>
+ 
+  <table border="0">  
+     <tr>
+      <th align=center>Location</th>
+      <th align=center>Value</th>    
+    </tr>   
+     <tr>
+      <td>&nbsp;</td> 
+    </tr>     
+      <td>Temperature outside: </td>      
+      <td>[FAussen#Temperature] &#8451</td>       
+    </tr>   
+    <tr>
+      <td>Temperature inside: </td>      
+      <td>[FInnen#Temperature] &#8451</td>       
+    </tr>     
+    <tr>
+      <td>Humidity outside: </td>      
+      <td>[FAussen#Humidity] %</td>       
+    </tr>    
+    <tr>
+      <td>Humidity inside: </td>      
+      <td>[FInnen#Humidity] %</td>       
+    </tr>   
+    <tr>
+      <td>Humidity outside: </td>      
+      <td>[AFeuchte#Aussen] g/&#13221</td>       
+    </tr>  
+     <tr>
+      <td>Humidity inside: </td>      
+      <td>[AFeuchte#Innen] g/&#13221</td>       
+    </tr>             
+  </table>  
+
+ </center>     
+ </div>
+ </body>
+ </HTML>
