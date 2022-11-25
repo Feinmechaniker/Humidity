@@ -20,22 +20,27 @@
     }
 
  .container{
-    height: 600px;
+    height: 650px;
     width: 500px;
     border: 1px solid black;
     margin-top: 30px;
     }
+
+  footer p {
+	font-size: 16px;
+	color: #04186bdd;
+  }   
 </STYLE>
 
 <HTML> 
 <center>
 
 <body>
- <div class="container">
- <body style="background-color:#f4f4f4;">
- <center>  
+  <div class="container">
+  <body style="background-color:#f4f4f4;">
+  <center>  
 
- <table border="0">  
+  <table border="0">  
      <tr>
       <td align=center></td>
       <th align=center>Humidity Controller</th>    
@@ -57,7 +62,7 @@
       <td align=center><a class='button link' href="humcontrol.esp?cmd=event,sw_auto">Auto</a></td>
       <td align=center><a class='button link' href="humcontrol.esp?cmd=event,sw_off">Off</a></td>
     </tr>    
- </table>  
+  </table>  
  <br>       
   
   <table border="0">       
@@ -106,8 +111,15 @@
       <td>[AFeuchte#Innen] g/&#13221</td>       
     </tr>             
   </table>  
+  
+  <footer>
+		<p>© 2022 by AMESYS
+		<br>	
+		<a href="https://feinmechaniker.github.io/">Hum-Control</a> 
+		</p>
+	</footer>	
+</div>
+</body>
+</center>   
 
- </center>     
- </div>
- </body>
- </HTML>
+</HTML>
