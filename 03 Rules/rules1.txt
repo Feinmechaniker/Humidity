@@ -24,11 +24,19 @@ on Rules#Timer=1 do
  // TaskValueSet,AFeuchte,Innen, (%v2%*13.2434/(273.15+%v4%)*exp((17.62*%v4%)/(243.5+%v4%)))
  TaskValueSet,AFeuchte,Delta,(%v7%)    // Differenz anzeigen
 
- // Wenn Feuchteschwellwert in g/m³ überschritten UND Außentemperatur >10°C UND Automatik
- if [AFeuchte#Delta]>=0.1 and [FAussen#Temperature]>=10 and [Fan#State]=2    
+ // Wenn Feuchteschwellwert in g/m³ überschritten UND Außentemperatur >Temperatur UND Automatik
+ if [AFeuchte#Delta]>=0.1 and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
    GPIO,14,1                           // Lüfter einschalten
     else
      GPIO,14,0                         // Lüfter ausschalten 
  endif
+ 
+ if [Fan#State]=1
+   GPIO,14,1                           // Lüfter einschalten
+ endif 
+
+ if [Fan#State]=0
+   GPIO,14,0                           // Lüfter ausschalten
+ endif 
 
 endon
