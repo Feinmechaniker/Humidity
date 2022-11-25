@@ -2,6 +2,7 @@
  GPIO,14,0                              // D5 OFF (Lüfter)
  TaskValueSet,Fan,State,2               // default auf Automatik
  TaskValueSet,SW,Temp,10                // default Temperatur
+ TaskValueSet,SW,Hum,1                  // default Schaltschwelle
  LoopTimerSet,1,10                      // Start loop timer 1, 2 sec interval
 endon
 
@@ -15,17 +16,17 @@ on Rules#Timer=1 do
  // absolute Feuchte berechnen
  Let,5,(%v1%*13.2434/(273.15+%v3%)*exp((17.62*%v3%)/(243.5+%v3%))) // absolute Feuchte außen
  Let,6,(%v2%*13.2434/(273.15+%v4%)*exp((17.62*%v4%)/(243.5+%v4%))) // absolute Feuchte innen
- Let,7,(%v6%-%v5%)                      // Differenz der absoluten Feuchte innen - außen
+ Let,7,(%v6%-%v5%)                                                 // Differenz der absoluten Feuchte innen - außen
+ Let,8,(5*13.2434*exp(0.0696*%v4%))/(273.15+%v4%)                  // Schaltschwelle
  
  // anzeigen
  TaskValueSet,AFeuchte,Aussen,(%v5%)   // absolut außen anzeigen
  TaskValueSet,AFeuchte,Innen,(%v6%)    // absolut innen anzeigen
- // TaskValueSet,AFeuchte,Aussen,(%v1%*13.2434/(273.15+%v3%)*exp((17.62*%v3%)/(243.5+%v3%)))
- // TaskValueSet,AFeuchte,Innen, (%v2%*13.2434/(273.15+%v4%)*exp((17.62*%v4%)/(243.5+%v4%)))
  TaskValueSet,AFeuchte,Delta,(%v7%)    // Differenz anzeigen
+ TaskValueSet,SW,Hum,(%v8%)            // Schaltschwelle anzeigen
 
- // Wenn Feuchteschwellwert in g/m³ überschritten UND Außentemperatur >Temperatur UND Automatik
- if [AFeuchte#Delta]>=0.1 and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
+ // Wenn Schaltschwelle in g/m³ überschritten UND Außentemperatur > Temperatur UND Automatik
+ if [AFeuchte#Delta]>=[SW#Hum] and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
    GPIO,14,1                           // Lüfter einschalten
     else
      GPIO,14,0                         // Lüfter ausschalten 

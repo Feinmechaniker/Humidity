@@ -20,7 +20,7 @@
     }
 
  .container{
-    height: 650px;
+    height: 700px;
     width: 500px;
     border: 1px solid black;
     margin-top: 30px;
@@ -109,11 +109,15 @@
      <tr>
       <td>Humidity inside: </td>      
       <td>[AFeuchte#Innen] g/&#13221</td>       
-    </tr>             
+    </tr>       
+    <tr>
+      <td>Humidity Switch: </td>      
+      <td>[SW#Hum] g/&#13221</td>       
+    </tr>            
   </table>  
   
   <footer>
-		<p>© 2022 by AMESYS
+		<p>(c) 2022 by AMESYS
 		<br>	
 		<a href="https://feinmechaniker.github.io/">Hum-Control</a> 
 		</p>
