@@ -5394,7 +5394,7 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J4" library="Eagle_WR-TBL Rising Cage Clamp (rev20a)" package="691216710003" package3d_urn="urn:adsk.eagle:package:16248490/2" value="DHT22_IN" x="5" y="9.5" smashed="yes" rot="R270">
+<element name="J4" library="Eagle_WR-TBL Rising Cage Clamp (rev20a)" package="691216710003" package3d_urn="urn:adsk.eagle:package:16248490/2" value="AM2302_IN" x="5" y="9.5" smashed="yes" rot="R270">
 <attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/691216710003.pdf" x="5" y="9.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="IR-UL" value="14A" x="5" y="9.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="IR-VDE" value="24A" x="5" y="9.5" size="1.778" layer="27" rot="R270" display="off"/>
@@ -5409,7 +5409,7 @@ design rules under a new name.</description>
 <attribute name="WORKING-VOLTAGE-UL" value="300V (AC)" x="5" y="9.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="WORKING-VOLTAGE-VDE" value="250V (AC)" x="5" y="9.5" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="J3" library="Eagle_WR-TBL Rising Cage Clamp (rev20a)" package="691216710003" package3d_urn="urn:adsk.eagle:package:16248490/2" value="DHT22_OUT" x="5" y="29.8" smashed="yes" rot="R270">
+<element name="J3" library="Eagle_WR-TBL Rising Cage Clamp (rev20a)" package="691216710003" package3d_urn="urn:adsk.eagle:package:16248490/2" value="AM2302_OUT" x="5" y="29.8" smashed="yes" rot="R270">
 <attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/691216710003.pdf" x="5" y="29.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="IR-UL" value="14A" x="5" y="29.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="IR-VDE" value="24A" x="5" y="29.8" size="1.778" layer="27" rot="R270" display="off"/>
@@ -5487,7 +5487,7 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="25.81" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="VALUE" x="25.3274" y="51.2744" size="0.9906" layer="28" ratio="10" rot="MR90"/>
 </element>
-<element name="Q1" library="Aeternum" package="TRANSISTOR-NPN_SOT23-BEC" value="TRANSISTOR-NPN_BC817SMD" x="40.41" y="59.08" smashed="yes" rot="MR90">
+<element name="Q1" library="Aeternum" package="TRANSISTOR-NPN_SOT23-BEC" value="BC817" x="40.41" y="59.08" smashed="yes" rot="MR90">
 <attribute name="NAME" x="37.315" y="54.675" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="37.235" y="57.175" size="1.27" layer="28" rot="MR90"/>
 </element>
