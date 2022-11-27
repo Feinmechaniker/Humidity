@@ -1,23 +1,35 @@
-on sw_on do
+﻿ // Wenn Schaltschwelle in g/m³ überschritten UND Außentemperatur > Temperatur UND Automatik
+ if [AFeuchte#Delta]>=[SW#Hum] and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
+   GPIO,14,1                           // Lüfter ein
+    else
+     GPIO,14,0                         // Lüfter aus 
+ endif
+ 
+// Lüfter ein
+on sw_on do                           
   gpio,14,1
   TaskValueSet,Fan,State,1
 endon
 
-on sw_off do
+// Lüfter aus
+on sw_off do                         
   gpio,14,0
   TaskValueSet,Fan,State,0
 endon  
 
+// Automatik
 on sw_auto do
   TaskValueSet,Fan,State,2
 endon  
 
+// Temp. down
 on valuedown do
   if [SW#Temp]>0
     TaskValueSet,SW,Temp,[SW#Temp]-0.5
   endif
 endon
 
+// Temp. up
 on valueup do
   if [SW#Temp]<50
     TaskValueSet,SW,Temp,[SW#Temp]+0.5
