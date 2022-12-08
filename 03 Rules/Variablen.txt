@@ -1,0 +1,12 @@
+ Let,1,[FAussen#Humidity]               // relative Feuchte außen in % 
+ Let,2,[FInnen#Humidity]                // relative Feuchte innen in %
+ Let,3,[FAussen#Temperature]            // Temperatur außen
+ Let,4,[FInnen#Temperature]             // Temperatur innen
+ Let,5,[AFeuchte#Aussen] 		// absolute Feuchte außen
+ Let,6,[AFeuchte#Innen]			// absolute Feuchte innen
+ Let,7,[AFeuchte#TPA]			// Taupunkt außen
+ Let,8,[AFeuchte#TPI]			// Taupunkt innen
+ Let,9,[SW#Hum]   			// Schaltschwelle aus max Temp. 2% Fehler
+
+ Let,10					// Hilfsgröße
+ Let,11					// Hilfsgröße
