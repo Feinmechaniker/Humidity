@@ -1,3 +1,10 @@
+Status des Lüfters [Fan#State]
+ 0 OFF über Schalter
+ 1 ON über Schalter
+ 2 Automatik über Regel
+
+Variablen 
+
  Let,1,[FAussen#Humidity]               // relative Feuchte außen in % 
  Let,2,[FInnen#Humidity]                // relative Feuchte innen in %
  Let,3,[FAussen#Temperature]            // Temperatur außen
@@ -6,7 +13,9 @@
  Let,6,[AFeuchte#Innen]			// absolute Feuchte innen
  Let,7,[AFeuchte#TPA]			// Taupunkt außen
  Let,8,[AFeuchte#TPI]			// Taupunkt innen
- Let,9,[SW#Hum]   			// Schaltschwelle aus max Temp. 2% Fehler
+ Let,9					// größere der beiden Temperaturen (Innentemperatur oder Außentemperatur)
+ Let,13,[SW#Hum]   			// Schaltschwelle aus max Temp. 2% Fehler
+ Let,12,[SW#Delta]			// Differenz der absoluten Feuchte
 
  Let,10					// Hilfsgröße
  Let,11					// Hilfsgröße

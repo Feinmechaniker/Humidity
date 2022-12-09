@@ -1,59 +1,27 @@
 ﻿on System#Boot do
- GPIO,14,0                              // D5 OFF (Lüfter)
- TaskValueSet,Fan,State,2               // default auf Automatik
- TaskValueSet,SW,Temp,10                // default Temperatur
- TaskValueSet,SW,Hum,1                  // default Schaltschwelle
- LoopTimerSet,1,30                      // Start loop timer 1, 30 sec interval
+ GPIO,14,0 // D5 OFF (Lüfter)
+ TaskValueSet,Fan,State,2 // default auf Automatik
+ TaskValueSet,SW,Temp,10 // default Temperatur
+ TaskValueSet,SW,Hum,1 // default Schaltschwelle
+ TaskValueSet,SW,Fan,0 // default Lüfter OFF
+ LoopTimerSet,1,30 // Start loop timer 1, 30 sec interval
 endon
 
 on [FAussen#Humidity]<>0 do
- Let,1,[FAussen#Humidity]               // relative Feuchte außen in % 
+ Let,1,[FAussen#Humidity] // relative Feuchte außen in % 
 endon 
 
 on [FInnen#Humidity]<>0 do
- Let,2,[FInnen#Humidity]                // relative Feuchte innen in %
+ Let,2,[FInnen#Humidity] // relative Feuchte innen in %
 endon
 
 on [FAussen#Temperature]<>0 do
- Let,3,[FAussen#Temperature]            // Temperatur außen
+ Let,3,[FAussen#Temperature] // Temperatur außen
 endon
 
 on [FInnen#Temperature]<>0 do
- Let,4,[FInnen#Temperature]             // Temperatur innen
+ Let,4,[FInnen#Temperature] // Temperatur innen
 endon
 
-on Rules#Timer=1 do
 
- // Messdaten erfassen
-
- // maximale Temperatur
- if [FAussen#Temperature]>=[FInnen#Temperature]   
-   Let,9,[FAussen#Temperature]                          
-    else
-     Let,9,[FInnen#Temperature]
- endif 
-
- // absolute Feuchte berechnen
- Let,5,(%v1%*13.2434/(273.15+%v3%)*exp((17.62*%v3%)/(243.5+%v3%))) // absolute Feuchte außen
- Let,6,(%v2%*13.2434/(273.15+%v4%)*exp((17.62*%v4%)/(243.5+%v4%))) // absolute Feuchte innen
- 
- Let,10,(-4283.77+(%v3%+243.12)*ln(%v1%/100)) // Taupunkt außen
- Let,11,(-4283.77*(%v3%+243.12))
- Let,7,%v11%/%v10%-243.12
-
- Let,10,(-4283.77+(%v4%+243.12)*ln(%v2%/100)) // Taupunkt innen
- Let,11,(-4283.77*(%v4%+243.12))
- Let,8,%v11%/%v10%-243.12
-
-
- Let,9,(2*13.2434*exp(0.0696*%v9%))/(273.15+%v9%)                  // Schaltschwelle aus max Temp. 2% Fehler
-
- // anzeigen
- TaskValueSet,AFeuchte,Aussen,(%v5%)   // absolut außen anzeigen
- TaskValueSet,AFeuchte,Innen,(%v6%)    // absolut innen anzeigen
- TaskValueSet,AFeuchte,TPA,(%v7%)    // Taupunkt außen anzeigen
- TaskValueSet,AFeuchte,TPI,(%v8%)    // Taupunkt innen anzeigen
- TaskValueSet,SW,Hum,(%v9%)            // Schaltschwelle anzeigen
-
-endon
 

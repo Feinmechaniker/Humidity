@@ -1,37 +1,47 @@
-﻿ // Wenn Schaltschwelle in g/m³ überschritten UND Außentemperatur > Temperatur UND Automatik
- if [AFeuchte#Delta]>=[SW#Hum] and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
-   GPIO,14,1                           // Lüfter ein
+﻿on Rules#Timer=1 do
+
+ // Messdaten erfassen
+
+ // maximale Temperatur
+ if [FAussen#Temperature]>=[FInnen#Temperature]   
+   Let,9,[FAussen#Temperature]                          
     else
-     GPIO,14,0                         // Lüfter aus 
+     Let,9,[FInnen#Temperature]
+ endif 
+
+ // absolute Feuchte berechnen
+ Let,5,(%v1%*13.2434/(273.15+%v3%)*exp((17.62*%v3%)/(243.5+%v3%))) // absolute Feuchte außen
+ Let,6,(%v2%*13.2434/(273.15+%v4%)*exp((17.62*%v4%)/(243.5+%v4%))) // absolute Feuchte innen
+ Let,12,(%v6%-%v5%) // Differenz der absoluten Feuchte innen - außen
+
+ Let,10,(-4283.77+(%v3%+243.12)*ln(%v1%/100)) // Taupunkt außen
+ Let,11,(-4283.77*(%v3%+243.12))
+ Let,7,%v11%/%v10%-243.12
+
+ Let,10,(-4283.77+(%v4%+243.12)*ln(%v2%/100)) // Taupunkt innen
+ Let,11,(-4283.77*(%v4%+243.12))
+ Let,8,%v11%/%v10%-243.12
+
+
+ Let,13,(2*13.2434*exp(0.0696*%v9%))/(273.15+%v9%) // Schaltschwelle aus max Temp. 2% Fehler
+
+ // anzeigen
+ TaskValueSet,AFeuchte,Aussen,(%v5%) // absolut außen anzeigen
+ TaskValueSet,AFeuchte,Innen,(%v6%) // absolut innen anzeigen
+ TaskValueSet,AFeuchte,TPA,(%v7%) // Taupunkt außen anzeigen
+ TaskValueSet,AFeuchte,TPI,(%v8%) // Taupunkt innen anzeigen
+ TaskValueSet,SW,Hum,(%v13%) // Schaltschwelle anzeigen
+ TaskValueSet,SW,Delta,(%v12%) // Schaltschwelle anzeigen
+
+ // Wenn Schaltschwelle in g/m³ überschritten UND Außentemperatur > Temperatur UND Automatik
+ if [SW#Delta]>=[SW#Hum] and [FAussen#Temperature]>=[SW#Temp] and [Fan#State]=2    
+   GPIO,14,1                           // Lüfter ein
+   TaskValueSet,SW,Fan,1    // anzeigen
  endif
- 
-// Lüfter ein
-on sw_on do                           
-  gpio,14,1
-  TaskValueSet,Fan,State,1
+ //  // Wenn Schaltschwelle in g/m³ unterschritten OHNE Außentemperatur > Temperatur UND Automatik
+ if [SW#Delta]<[SW#Hum] and [Fan#State]=2        
+     GPIO,14,0                         // Lüfter aus 
+     TaskValueSet,SW,Fan,0  // anzeigen
+ endif
+
 endon
-
-// Lüfter aus
-on sw_off do                         
-  gpio,14,0
-  TaskValueSet,Fan,State,0
-endon  
-
-// Automatik
-on sw_auto do
-  TaskValueSet,Fan,State,2
-endon  
-
-// Temp. down
-on valuedown do
-  if [SW#Temp]>0
-    TaskValueSet,SW,Temp,[SW#Temp]-0.5
-  endif
-endon
-
-// Temp. up
-on valueup do
-  if [SW#Temp]<50
-    TaskValueSet,SW,Temp,[SW#Temp]+0.5
-  endif
-Endon
