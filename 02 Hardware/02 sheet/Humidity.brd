@@ -5475,7 +5475,7 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="5" x="50.75" y="54.12" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="49.52" y="53.231" size="1.778" layer="27" ratio="10"/>
 </element>
-<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="120" x="36.578" y="32.11" smashed="yes" rot="MR0">
+<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="180" x="36.578" y="32.11" smashed="yes" rot="MR0">
 <attribute name="NAME" x="33.118" y="31.4054" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="POPULARITY" value="41" x="36.578" y="32.11" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="36.578" y="32.11" size="1.778" layer="28" rot="MR0" display="off"/>
@@ -5508,7 +5508,7 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="C" x="34.92" y="44.63" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="VALUE" x="37.587" y="47.297" size="1.27" layer="28" ratio="10" rot="MR180"/>
 </element>
-<element name="IC2" library="ESP12E_DEVKIT" package="ESP12E_DEVKIT" value="ESP8266" x="31.5" y="32" smashed="yes">
+<element name="IC2" library="ESP12E_DEVKIT" package="ESP12E_DEVKIT" value="Amica Modul V2 ESP8266 ESP-12F" x="31.5" y="32" smashed="yes">
 <attribute name="NAME" x="33.05" y="35.46" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="27.45" y="5.69" size="1.27" layer="27"/>
 </element>
