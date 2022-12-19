@@ -3,4 +3,10 @@ Die Hardware besteht aus einem NodeMCU Lua Amica Modul V2 ESP8266 Board, einem N
 
 ![Hardware](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/device.jpg)
 
+Leiterplatten können unter:
+https://aisler.net/p/RMIZEMKT
+bezogen werden.
+
+![Board](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/board.jpg)
+
 (c) 2022 Joe.G
