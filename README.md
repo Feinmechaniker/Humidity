@@ -4,7 +4,7 @@ Das Zusamenspiel der einzelnen Komponenten zeigt die nachfolgende Abbildung.
 
 ![Übersicht](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/overview.jpg)
 
-Auf einem OLED-Display können die aktuellen Temperaturen und die absoluten Feuchten abgelesen werden.
+Optional können auf einem OLED-Display die aktuellen Temperaturen und die absoluten Feuchten abgelesen werden.
 
 ![OLED](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/OLED.jpg)
 

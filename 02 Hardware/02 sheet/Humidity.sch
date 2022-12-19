@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -20963,6 +20963,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="SJ2" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
 <part name="PE1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="PE" device=""/>
 <part name="PE2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="PE" device=""/>
+<part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21065,7 +21066,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <instance part="+3V2" gate="G$1" x="67.31" y="109.22" smashed="yes" rot="R90">
 <attribute name="VALUE" x="66.04" y="110.49" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="GND7" gate="1" x="68.58" y="99.06" smashed="yes"/>
+<instance part="GND7" gate="1" x="68.58" y="101.6" smashed="yes" rot="R270"/>
 <instance part="R3" gate="G$1" x="170.18" y="121.92" smashed="yes" rot="R270">
 <attribute name="NAME" x="171.6786" y="123.19" size="1.27" layer="95" rot="R270"/>
 <attribute name="VALUE" x="169.418" y="123.19" size="1.27" layer="96" rot="R270"/>
@@ -21095,6 +21096,9 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 </instance>
 <instance part="PE2" gate="M" x="85.09" y="39.37" smashed="yes">
 <attribute name="VALUE" x="83.82" y="35.56" size="1.27" layer="96"/>
+</instance>
+<instance part="P+6" gate="1" x="67.31" y="99.06" smashed="yes" rot="R90">
+<attribute name="VALUE" x="66.04" y="100.33" size="1.27" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -21155,7 +21159,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <segment>
 <pinref part="IC2" gate="G$1" pin="GND@1"/>
 <pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="73.66" y1="101.6" x2="68.58" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="101.6" x2="71.12" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
@@ -21221,6 +21225,11 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <wire x1="137.16" y1="124.46" x2="132.08" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="SJ1" gate="1" pin="1"/>
+</segment>
+<segment>
+<pinref part="P+6" gate="1" pin="+5V"/>
+<pinref part="IC2" gate="G$1" pin="VIN"/>
+<wire x1="69.85" y1="99.06" x2="73.66" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
