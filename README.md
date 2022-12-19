@@ -3,13 +3,18 @@ Humidity-Control bestimmt die Temperatur und die relative Luftfeuchtigkeit im In
 
 ![OLED](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/OLED.jpg)
 
-## Dashboard
-Ein Dashboard ermöglich Abfrage bzw. Änderung
+## Dashboard lokal
+Ein Dashboard auf einem lokalen Webserver des Controllers ermöglich Abfrage bzw. Änderung
 - des Schaltzustandes des Lüfters
 - der minimalen Schalttemperatur
 - der Temperaturen im Innen- und Außenbereich
 - der relativen und absoluten Luftfeuchtigkeiten im Innen- und Außenbereich
 
 ![Dashboard](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/dashboard.jpg)
+
+## Dashboard Grafana
+Bei Bedarf werden sowohl die Messdaten als auch die daraus berechneten Ergebnisse über MQTT an eine Datenbank gesendet. Diese können dann über eine grafische Visualisierung wie z.B. Grafana dargestellt werden. 
+
+![Dashboard](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/grafana.jpg)
 
 (c) 2022 Joe.G
