@@ -1,20 +1,6 @@
 # Humidity-Controler
-Humidity-Control bestimmt die Temperatur und die relative Luftfeuchtigkeit im Innen- und Außenbereich. Aus diesen Messdaten wird jede Minute für den Innen- und Außenbereich jeweils die absolute Luftfeuchtigkeit in g/m³ berechnet. In Abhängigkeit einer dynamischen Hystereseschwelle kann über ein Relais ein Lüfter angesteuert werden. Liegt die absolute Feuchte im Innenraum über der absoluten Feuchte im Außenbereich und ist die minimale Außentemperatur noch nicht erreicht, wird der Lüfter eingeschaltet. Die Hysterese wird automatisch dynamisch über die minimale Außentemperatur und die Genauigkeit der Feuchtesensoren berechnet. Auf einem OLED-Display können die aktuellen Temperaturen und die absoluten Feuchten abgelesen werden.
+Die Hardware besteht aus einem NodeMCU Lua Amica Modul V2 ESP8266 Board, einem Netzteil und einer Relaisschaltung, welche über einen Optokoppler von der DC-Seite getrennt ist. Die Leiterplatte befindet sich in einem Z108 Hutschienengehäuse.  
 
-![OLED](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/OLED.jpg)
-
-## Dashboard lokal
-Ein Dashboard auf einem lokalen Webserver des Controllers ermöglich Abfrage bzw. Änderung
-- des Schaltzustandes des Lüfters
-- der minimalen Schalttemperatur
-- der Temperaturen im Innen- und Außenbereich
-- der relativen und absoluten Luftfeuchtigkeiten im Innen- und Außenbereich
-
-![Dashboard](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/dashboard.jpg)
-
-## Dashboard Grafana
-Bei Bedarf werden sowohl die Messdaten als auch die daraus berechneten Ergebnisse über MQTT an eine Datenbank gesendet. Diese können dann über eine grafische Visualisierung wie z.B. Grafana dargestellt werden. 
-
-![Dashboard](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/grafana.jpg)
+![Hardware](https://github.com/Feinmechaniker/Humidity/blob/main/06%20Website/device.jpg)
 
 (c) 2022 Joe.G
