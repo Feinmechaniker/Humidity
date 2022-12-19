@@ -54,7 +54,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -21040,9 +21040,9 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <attribute name="VALUE" x="175.26" y="74.93" size="1.27" layer="96"/>
 </instance>
 <instance part="GND4" gate="1" x="173.99" y="67.31" smashed="yes"/>
-<instance part="D1" gate="G$1" x="181.61" y="85.09" smashed="yes" rot="R270">
-<attribute name="NAME" x="184.15" y="85.5726" size="1.27" layer="95"/>
-<attribute name="VALUE" x="184.15" y="81.5086" size="1.27" layer="96"/>
+<instance part="D1" gate="G$1" x="181.61" y="85.09" smashed="yes" rot="R90">
+<attribute name="NAME" x="179.07" y="84.6074" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="179.07" y="88.6714" size="1.27" layer="96" rot="R180"/>
 </instance>
 <instance part="P+3" gate="1" x="120.65" y="49.53" smashed="yes">
 <attribute name="VALUE" x="121.92" y="52.07" size="1.27" layer="96" rot="R180"/>
@@ -21203,8 +21203,8 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <wire x1="173.99" y1="90.17" x2="181.61" y2="90.17" width="0.1524" layer="91"/>
 <junction x="173.99" y="90.17"/>
-<pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="181.61" y1="90.17" x2="181.61" y2="87.63" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="181.61" y1="87.63" x2="181.61" y2="90.17" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -21238,8 +21238,8 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="Q1" gate="G$1" pin="C"/>
 <wire x1="173.99" y1="80.01" x2="181.61" y2="80.01" width="0.1524" layer="91"/>
 <junction x="173.99" y="80.01"/>
-<pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="181.61" y1="80.01" x2="181.61" y2="82.55" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="181.61" y1="82.55" x2="181.61" y2="80.01" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
